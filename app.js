@@ -4,7 +4,7 @@ http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' })
 
   const url = req.url
-  if (url === 'pin') {
+  if (url === '/pin') {
     res.write(JSON.stringify({
       status: true,
       msg: "PUN"
