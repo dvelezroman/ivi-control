@@ -1,5 +1,4 @@
 const http = require('http')
-const { openDoor } = require('./utils/door')
 
 const { Gpio } = require('onoff')
 const DOOR = new Gpio(4, 'out')
