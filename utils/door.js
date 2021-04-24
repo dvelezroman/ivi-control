@@ -1,12 +1,12 @@
 const { Gpio } = require('onoff')
 const DOOR = new Gpio(4, 'out')
 
-const closeDoor = () => {
+function closeDoor() {
   LED.writeSync(1)
   LED.unexport()
 }
 
-const openDoor = (ms) => {
+function openDoor(ms) {
   if (DOOR.readSync() === 1) {
     DOOR.writeSync(0)
     setTimeout(closeDoor, ms);
