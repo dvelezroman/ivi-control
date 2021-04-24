@@ -1,19 +1,5 @@
 const http = require('http')
-
-const { Gpio } = require('onoff')
-const DOOR = new Gpio(4, 'out')
-
-function closeDoor() {
-  LED.writeSync(1)
-  LED.unexport()
-}
-
-function openDoor(ms) {
-  if (DOOR.readSync() === 1) {
-    DOOR.writeSync(0)
-    setTimeout(closeDoor, ms);
-  }
-}
+const { openDoor } = require('./utils/door')
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' })
