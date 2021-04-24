@@ -6,9 +6,9 @@ const closeDoor = () => {
   LED.unexport()
 }
 
-export const openDoor = () => {
+export const openDoor = (ms) => {
   if (DOOR.readSync() === 1) {
     DOOR.writeSync(0)
-    setTimeout(closeDoor, 5000);
+    setTimeout(closeDoor, ms);
   }
 }
