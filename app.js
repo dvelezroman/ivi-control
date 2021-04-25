@@ -1,5 +1,4 @@
 const http = require('http')
-const { openDoor } = require('./utils/door')
 
 http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' })
@@ -9,13 +8,6 @@ http.createServer((req, res) => {
     res.write(JSON.stringify({
       status: true,
       msg: "PUN"
-    }))
-    res.end()
-  } else if (url === '/open') {
-    openDoor(5000)
-    res.write(JSON.stringify({
-      status: true,
-      msg: "Open"
     }))
     res.end()
   } else {
