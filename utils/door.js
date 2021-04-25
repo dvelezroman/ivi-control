@@ -3,7 +3,6 @@ const DOOR = new Gpio(4, 'out')
 
 function closeDoor() {
   DOOR.writeSync(1)
-  DOOR.unexport()
 }
 
 function openDoor(ms) {
