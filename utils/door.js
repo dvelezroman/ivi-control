@@ -2,8 +2,8 @@ const { Gpio } = require('onoff')
 const DOOR = new Gpio(4, 'out')
 
 function closeDoor() {
-  LED.writeSync(1)
-  LED.unexport()
+  DOOR.writeSync(1)
+  DOOR.unexport()
 }
 
 function openDoor(ms) {
