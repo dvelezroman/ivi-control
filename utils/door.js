@@ -15,4 +15,5 @@ function openDoor(ms) {
 
 module.exports = {
   openDoor,
+  closeDoor,
 }
