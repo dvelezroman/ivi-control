@@ -11,6 +11,13 @@ http.createServer((req, res) => {
       msg: "PUN"
     }))
     res.end()
+  } else if (url === '/open') {
+    openDoor(5000)
+    res.write(JSON.stringify({
+      status: true,
+      msg: "Open"
+    }))
+    res.end()
   } else {
     res.write(JSON.stringify({
       status: true,
