@@ -1,5 +1,5 @@
 const http = require('http')
-const { openDoor } = require('./utils/door')
+const { openDoor, closeDoor } = require('./utils/door')
 
 closeDoor()
 
