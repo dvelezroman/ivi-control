@@ -11,6 +11,7 @@
   "author": "Dario Velez",
   "license": "ISC",
   "dependencies": {
+    "node-rfid": "^1.0.7",
     "onoff": "^6.0.2"
   }
 }

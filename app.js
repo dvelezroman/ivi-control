@@ -1,5 +1,15 @@
 const http = require('http')
-const { openDoor, closeDoor } = require('./utils/door')
+const rfid = require('node-rfid')
+
+const { openDoor, closeDoor, buzz } = require('./utils/door')
+
+rfid.read((err, result) => {
+  if (err) {
+    buzz()
+  } else {
+    console.log(result)
+  }
+})
 
 closeDoor()
 

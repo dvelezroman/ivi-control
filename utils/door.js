@@ -2,6 +2,11 @@ const { Gpio } = require('onoff')
 const DOOR = new Gpio(4, 'out')
 const BUZZER = new Gpio(17, 'out')
 
+function buzz() {
+  BUZZER.writeSync(1)
+  setTimeout(BUZZER.writeSync(0), 100)
+}
+
 function closeDoor() {
   DOOR.writeSync(1)
   BUZZER.writeSync(0)
@@ -18,4 +23,5 @@ function openDoor(ms) {
 module.exports = {
   openDoor,
   closeDoor,
+  buzz,
 }
