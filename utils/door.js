@@ -4,7 +4,7 @@ const BUZZER = new Gpio(17, 'out')
 
 function buzz() {
   BUZZER.writeSync(1)
-  setTimeout(BUZZER.writeSync(0), 100)
+  setTimeout(BUZZER.writeSync(0), 1000)
 }
 
 function closeDoor() {
